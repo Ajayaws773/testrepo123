@@ -33,10 +33,10 @@ provider "aws" {
  # Route table for Private Subnet's
  resource "aws_route_table" "PrivateRT" {    # Creating RT for Private Subnet
    vpc_id = aws_vpc.Main.id
-   route {
-   cidr_block = "0.0.0.0/0"             # Traffic from Private Subnet reaches Internet via NAT Gateway
-   gateway_id = "${var.main_vpc_cidr}"
-   }
+  # route {
+  # cidr_block = "0.0.0.0/0"             # Traffic from Private Subnet reaches Internet via NAT Gateway
+   #gateway_id = "${var.main_vpc_cidr}"
+  # }
  }
 # Route table Association with Public Subnet's
  resource "aws_route_table_association" "PublicRTassociation" {
